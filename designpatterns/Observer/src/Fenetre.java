@@ -11,12 +11,14 @@ public class Fenetre extends JFrame {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
         this.setResizable(false);
-        this.setSize(200, 80);
+        this.setSize(800, 600);
 
         /* On initialise notre JLabel */
-        Font police = new Font("Pendu", Font.TYPE1_FONT, 30);
+        Font police = new Font("DS-digital", Font.TYPE1_FONT, 30);
         this.label.setFont(police);
         this.label.setHorizontalAlignment(JLabel.CENTER);
+        this.label.setText("Pendu");
+
         /* On ajoute le JLabel et notre JFrame */
         this.getContentPane().add(this.label, BorderLayout.CENTER);
     }
