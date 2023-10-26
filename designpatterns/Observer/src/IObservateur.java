@@ -1,3 +1,3 @@
-public interface IObservateur {
-    void update(String lettre, String motTemporaire, int vie, int status);
+public interface IObservateur<T> {
+    void update(T obj);
 }

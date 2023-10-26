@@ -4,7 +4,7 @@ import java.awt.Font;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-public class ObservateurFenetre extends JFrame implements IObservateur {
+public class ObservateurFenetre extends JFrame implements IObservateur<TypeGame> {
     private JLabel labelMot = new JLabel();
     private JLabel labelVie = new JLabel();
 
@@ -23,9 +23,9 @@ public class ObservateurFenetre extends JFrame implements IObservateur {
     }
 
     @Override
-    public void update(String lettre, String motTemporaire, int vie, int status) {
-        this.labelMot.setText(motTemporaire);
-        this.labelVie.setText(Integer.toString(vie));
+    public void update(TypeGame obj) {
+        this.labelMot.setText(obj.getMotTemporaire());
+        this.labelVie.setText(Integer.toString(obj.getVie()));
     }
 
 }

@@ -10,7 +10,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
-public class Game extends JFrame {
+public class Game<T extends TypeGame> extends JFrame {
     private JLabel label = new JLabel();
     private JTextField textField = new JTextField();
     private JButton button = new JButton();
@@ -19,9 +19,12 @@ public class Game extends JFrame {
     private int vie = 10;
     private StringBuilder motTemporaire = new StringBuilder("____________");
 
-    private List<IObservateur> observateurs = new ArrayList<>();
+    private T tg;
 
-    public Game() {
+    private List<IObservateur<TypeGame>> observateurs = new ArrayList<>();
+
+    public Game(T typeGame) {
+        this.tg = typeGame;
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
         this.setResizable(false);
@@ -66,16 +69,20 @@ public class Game extends JFrame {
     }
 
     private void update(char lettre) {
-        for (IObservateur obs : observateurs) {
-            obs.update(Character.toString(lettre), motTemporaire.toString(), vie, status);
+        for (IObservateur<TypeGame> obs : observateurs) {
+            tg.setLettre(Character.toString(lettre));
+            tg.setMotTemporaire(motTemporaire.toString());
+            tg.setStatus(status);
+            tg.setVie(vie);
+            obs.update(tg);
         }
     }
 
-    public void addObservateur(IObservateur obs) {
+    public void addObservateur(IObservateur<TypeGame> obs) {
         this.observateurs.add(obs);
     }
 
-    public void removeObservateur(IObservateur obs) {
+    public void removeObservateur(IObservateur<TypeGame> obs) {
         this.observateurs.remove(obs);
     }
 
