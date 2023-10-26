@@ -1,0 +1,31 @@
+import java.awt.BorderLayout;
+import java.awt.Font;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+
+public class ObservateurFenetre extends JFrame implements IObservateur {
+    private JLabel labelMot = new JLabel();
+    private JLabel labelVie = new JLabel();
+
+    public ObservateurFenetre() {
+        this.setLocationRelativeTo(null);
+        this.setResizable(false);
+        this.setSize(800, 600);
+        Font police = new Font("DS-digital", Font.TYPE1_FONT, 30);
+        this.labelMot.setFont(police);
+        this.labelMot.setHorizontalAlignment(JLabel.CENTER);
+        this.labelVie.setFont(police);
+        this.labelVie.setHorizontalAlignment(JLabel.CENTER);
+        this.getContentPane().add(this.labelMot, BorderLayout.PAGE_START);
+        this.getContentPane().add(this.labelVie, BorderLayout.CENTER);
+        this.setVisible(true);
+    }
+
+    @Override
+    public void update(String lettre, String motTemporaire, int vie, int status) {
+        this.labelMot.setText(motTemporaire);
+        this.labelVie.setText(Integer.toString(vie));
+    }
+
+}
