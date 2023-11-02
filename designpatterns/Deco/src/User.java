@@ -1,9 +1,10 @@
 public class User {
 
-    @Required()
+    @Required(errorMessage = "%s obligatoire")
     private String name;
 
-    @Required(errorMessage = "Prénom obligatoire")
+    @Required(errorMessage = "%s obligatoire")
+    @Display(name = "Prénom")
     private String firstname;
 
     public String getFirstname() {
