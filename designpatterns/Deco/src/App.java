@@ -1,6 +1,16 @@
 public class App {
     public static void main(String[] args) throws Exception {
 
+        User u = new User();
+        u.setName("");
+
+        boolean test = IsValid(u);
+
+    }
+
+    private static boolean IsValid(Object o) {
+        // return si l'objet est valide et afficher en console si il y a des erreurs.
+        return false;
     }
 
     @Log
