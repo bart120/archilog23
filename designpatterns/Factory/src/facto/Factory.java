@@ -3,7 +3,12 @@ package facto;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Factory {
+public final class Factory {
+    private static Factory INSTANCE;
+
+    private Factory() {
+    }
+
     private List<IComputer> computers = new ArrayList<>();
 
     public void displayAll() {
@@ -18,11 +23,18 @@ public class Factory {
             computers.add(c);
             return c;
         }
-        if (type.equals("DESCKTOP")) {
+        if (type.equals("DESKTOP")) {
             IComputer c = new Desktop(cpu, ram, 250);
             computers.add(c);
             return c;
         }
         return null;
+    }
+
+    public static Factory getInstance() {
+        if (Factory.INSTANCE == null) {
+            Factory.INSTANCE = new Factory();
+        }
+        return Factory.INSTANCE;
     }
 }
