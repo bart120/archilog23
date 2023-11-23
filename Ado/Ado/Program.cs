@@ -1,5 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using MySql.Data.MySqlClient;
+using MySqlX.XDevAPI.Relational;
+using Org.BouncyCastle.Bcpg;
 using System.Data.Common;
 using System.Data.SqlClient;
 
