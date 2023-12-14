@@ -66,3 +66,19 @@ Les fichiers rendus doivent contenir
   - Un AUTHORS.TXT listant le prénom et nom de l'étudiant.
 Le sujet du mail doit contenir votre section ainsi que votre nom.
 Un code qui ne compile pas ou ne s'éxécute pas ne sera pas noté (conseil: faites des branches git)
+
+Les horaires de passage des groupes sont les suivants:
+ 
+
+- 09h45 => Jérémie LE BIHAN
+- 10h15 => Somaya ASSAADI
+- 10h45 => Sofiane DRARIS
+- 11h15 => Clément GROSSIEUX & Yohan MOREN
+- 11h45 => Celina AININE
+- 12h15 => Thomas LANDETTE
+- 12h45 => Maxime PAGES
+- 14h15 => Louis DE LAVENNE
+- 14h45 => Quentin LEMAIRE
+
+
+Le rendu se ferra par mail à: vincent.leclerc@ynov.com
